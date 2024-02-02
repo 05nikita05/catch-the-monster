@@ -42,7 +42,7 @@ var interval = setInterval(function () {
     clearInterval(interval);
     endGame(sc);
   }
-}, 500);
+}, 1000);
 
 newImg.addEventListener("click", function () {
   addImage();
