@@ -1,10 +1,7 @@
 var screen = document.querySelectorAll(".screen");
 var startBtn = document.querySelector("button");
-
 var allElem = document.querySelectorAll(".elem");
-
 var playground = document.querySelector(".playground");
-
 var score = document.querySelector("#score h4 span");
 var time = document.querySelector("#time h4 span");
 
