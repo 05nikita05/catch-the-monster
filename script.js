@@ -18,11 +18,16 @@ allElem.forEach(function (elem) {
     addImage();
   });
 });
+
+function addImage() {
+  setTimeout(createImage, 500);
+  updateScore();
+}
 var newImg = document.createElement("img");
 
 function createImage() {
-  var x = Math.random() * 100;
-  var y = Math.random() * 100;
+  var x = Math.random() * 90;
+  var y = Math.random() * 90;
   var rot = Math.random() * 360;
   newImg.setAttribute("src", selected);
   newImg.style.left = x + "%";
@@ -30,26 +35,9 @@ function createImage() {
   newImg.style.rotate = rot + "deg";
   playground.appendChild(newImg);
 }
-
-var t = 0;
-var interval = setInterval(function () {
-  t++;
-  time.innerHTML = t;
-  if (t >= 60) {
-    clearInterval(interval);
-    endGame(sc);
-  }
-}, 1000);
-
 newImg.addEventListener("click", function () {
   addImage();
 });
-
-function addImage() {
-  setTimeout(createImage, 500);
-  updateScore();
-}
-
 var sc = 0;
 function updateScore() {
   sc++;
@@ -58,6 +46,16 @@ function updateScore() {
 var scoreCard = document.createElement("div");
 playground.append(scoreCard);
 
+var t = 30;
+var interval = setInterval(function () {
+  t--;
+  time.innerHTML = t;
+  if (t == 0) {
+    clearInterval(interval);
+    newImg.style.display="none"
+    endGame(sc);
+  }
+}, 1000);
 function endGame(sc) {
   scoreCard.style.display = "block";
   scoreCard.style.boxShadow = "0 0 8px 5px  rgb(57, 110, 150)";

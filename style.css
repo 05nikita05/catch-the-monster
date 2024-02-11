@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "debug";
-    src: url(./DEBUG\ FREE\ TRIAL.ttf);
+  font-family: "debug";
+  src: url(./DEBUG\ FREE\ TRIAL.ttf);
 }
 * {
   margin: 0;
@@ -99,6 +99,7 @@ body {
   height: 95%;
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 .playground img {
   position: absolute;
