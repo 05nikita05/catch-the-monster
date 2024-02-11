@@ -16,6 +16,16 @@ allElem.forEach(function (elem) {
     screen[2].style.transform = "translateY(-200%)";
     selected = elem.childNodes[3].getAttribute("src");
     addImage();
+    var t = 30;
+    var interval = setInterval(function () {
+      t--;
+      time.innerHTML = t;
+      if (t == 0) {
+        clearInterval(interval);
+        newImg.style.display = "none";
+        endGame(sc);
+      }
+    }, 1000);
   });
 });
 
@@ -46,16 +56,6 @@ function updateScore() {
 var scoreCard = document.createElement("div");
 playground.append(scoreCard);
 
-var t = 30;
-var interval = setInterval(function () {
-  t--;
-  time.innerHTML = t;
-  if (t == 0) {
-    clearInterval(interval);
-    newImg.style.display="none"
-    endGame(sc);
-  }
-}, 1000);
 function endGame(sc) {
   scoreCard.style.display = "block";
   scoreCard.style.boxShadow = "0 0 8px 5px  rgb(57, 110, 150)";
