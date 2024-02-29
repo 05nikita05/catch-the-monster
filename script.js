@@ -59,5 +59,5 @@ playground.append(scoreCard);
 function endGame(sc) {
   scoreCard.style.display = "block";
   scoreCard.style.boxShadow = "0 0 8px 5px  rgb(57, 110, 150)";
-  scoreCard.textContent = "Game Over! Your Score ⁚" + sc;
+  scoreCard.textContent = "Game Over!\n Your Score ⁚" + sc;
 }
